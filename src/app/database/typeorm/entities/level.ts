@@ -12,6 +12,6 @@ export class Level {
     })
     name: string;
 
-    @OneToMany(type => Progression, progression => progression.id_level)
+    @OneToMany(type => Progression, progression => progression.level)
     progression: Progression[]
 }

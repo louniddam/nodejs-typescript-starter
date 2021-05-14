@@ -13,7 +13,7 @@ export class User {
     @Column()
     lastName: string;
 
-    @OneToMany(type => Progression, progression => progression.id_user)
+    @OneToMany(type => Progression, progression => progression.user)
     progression: Progression[]
 
 }

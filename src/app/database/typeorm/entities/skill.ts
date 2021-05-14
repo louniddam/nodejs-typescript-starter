@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm'
 import { Progression } from './progression';
+import { Category } from './category';
 
 @Entity()
 export class Skill {
@@ -14,7 +15,10 @@ export class Skill {
     @Column("text")
     description: string;
 
-    @OneToMany(type => Progression, progression => progression.id_skill)
+    @OneToMany(type => Progression, progression => progression.skill)
     progression: Progression[]
+
+    @ManyToOne(type => Category, category => category.skills)
+    category: Category[]
 
 }
