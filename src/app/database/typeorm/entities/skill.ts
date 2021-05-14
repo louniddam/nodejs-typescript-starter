@@ -19,6 +19,6 @@ export class Skill {
     progression: Progression[]
 
     @ManyToOne(type => Category, category => category.skills)
-    category: Category[]
+    category: Category
 
 }

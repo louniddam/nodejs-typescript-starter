@@ -1,6 +1,5 @@
 import { CreateCategory } from './createCategory'
-import { request, Request, Response } from 'express'
-//Controller
+import { Request, Response } from 'express'
 
 export class CreateCategoryController {
     private useCase: CreateCategory;
@@ -13,21 +12,21 @@ export class CreateCategoryController {
 
         const { name, description } = req.body 
 
-        if (!name) {
-            return res.status(400).json({
-                error: {
-                    message: 'name is required'
-                }
-            })
-        }
+        // if (!name) {
+        //     return res.status(400).json({
+        //         error: {
+        //             message: 'name is required'
+        //         }
+        //     })
+        // }
 
-        if (!description) {
-            return res.status(400).json({
-                error: {
-                    message: 'Description is required'
-                }
-            });
-        }
+        // if (!description) {
+        //     return res.status(400).json({
+        //         error: {
+        //             message: 'Description is required'
+        //         }
+        //     });
+        // }
 
         // const categories = await this.useCase.getCategories();
         const createNewCategory = await this.useCase.execute({ name: name, description: description })

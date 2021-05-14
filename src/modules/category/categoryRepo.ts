@@ -8,10 +8,10 @@ export class CategoryRepo {
         this.entities = entities
     }
 
-    // public async getCategories() {
-    //     const CategoryEntity = this.entities.Category
-    //     return await CategoryEntity.find();
-    // }
+    public async getCategories() {
+        const CategoryEntity = this.entities.Category
+        return await CategoryEntity.find();
+    }
 
     public async create(categoryProps: categoryProps) {
         const CategoryEntity = this.entities.Category
