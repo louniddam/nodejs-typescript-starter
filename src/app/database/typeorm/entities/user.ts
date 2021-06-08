@@ -1,19 +1,17 @@
-  import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
-import { Progression } from "./progression";
+import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
 
 @Entity()
-export class User {
+export class User extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
-    firstName: string;
+    isAdmin: boolean;
 
     @Column()
-    lastName: string;
+    email: string;
 
-    @OneToMany(type => Progression, progression => progression.user)
-    progression: Progression[]
-
+    @Column()
+    password: string;
 }

@@ -1,5 +1,5 @@
 import { CategoryRepo } from '../../categoryRepo'
-// import { categoryProps } from '../categoryTypes'
+
 
 export class ReadCategory {
 

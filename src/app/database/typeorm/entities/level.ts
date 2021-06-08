@@ -1,9 +1,9 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BaseEntity } from 'typeorm'
 import { Progression } from './progression'
 
 
 @Entity()
-export class Level {
+export class Level extends BaseEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -12,6 +12,9 @@ export class Level {
     })
     name: string;
 
-    @OneToMany(type => Progression, progression => progression.level)
+    @Column()
+    level: string;
+
+    @OneToMany(() => Progression, progression => progression.level)
     progression: Progression[]
 }

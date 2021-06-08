@@ -1,8 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, BaseEntity } from 'typeorm'
 import {Skill }from './skill'
 
 @Entity()
-export class Category {
+export class Category extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -14,6 +14,6 @@ export class Category {
     @Column("text")
     description: string;
 
-    @OneToMany(type => Skill, skill => skill.id)
+    @OneToMany(() => Skill, skill => skill.category)
     skills: Skill[]
 }

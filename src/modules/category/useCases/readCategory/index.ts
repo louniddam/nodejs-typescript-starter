@@ -1,9 +1,9 @@
 import { CategoryRepo } from '../../categoryRepo'
-import { entities } from '../../../../app/database/typeorm/entities'
+import { entitiesObject } from '../../../../app/database/typeorm/entities'
 import { ReadCategory } from './readCategory'
 import { ReadCategoryController } from './readCategoryController'
 
-const categoryRepo = new CategoryRepo(entities)
+const categoryRepo = new CategoryRepo(entitiesObject)
 const readCategory = new ReadCategory(categoryRepo)
 const readCategoryController = new ReadCategoryController(readCategory)
 
