@@ -9,6 +9,6 @@ export class CreateUser {
     }
 
     public async execute(props: createUserProps) {
-        this.userRepo.create(props);
+        return await this.userRepo.create(props);
     }
 }

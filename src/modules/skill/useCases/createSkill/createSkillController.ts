@@ -9,12 +9,15 @@ export class CreateSkillController {
     }
 
     public async createSkill(req: Request, res: Response){
-        const name = req.body.name
-        const description = req.body.description
-        const categoryId = req.body.categoryId
 
-        const newSkill =  await this.useCase.createSkill({ name: name, description: description, categoryId: categoryId })
+        const { name, description, category } = req.body
 
+        console.log("REQ.BODY = ",req.body);
+        
+        const newSkill =  await this.useCase.createSkill({ name, description, category })
+
+        console.log("NEWSKILL:", newSkill);
+        
         res.status(200).send(newSkill)
     }
 }

@@ -1,23 +1,29 @@
+import { User } from '../user/user'
+
 type StudentDomainProps = {
     id: number,
-    firstname: string,
-    lastname: string
+    firstName: string,
+    lastName: string,
+    user: User
 }
 
 interface IStudent {
     id: number
-    firstname: string
-    lastname: string
+    firstName: string
+    lastName: string
+    user: User
 }
 
 export class Student implements IStudent {
     public id: number
-    public firstname: string
-    public lastname: string
+    public firstName: string
+    public lastName: string
+    public user: User
 
     constructor(props: StudentDomainProps) {
         this.id = props.id
-        this.firstname = props.firstname
-        this.lastname = props.lastname
+        this.firstName = props.firstName
+        this.lastName = props.lastName
+        this.user = props.user
     }
 }

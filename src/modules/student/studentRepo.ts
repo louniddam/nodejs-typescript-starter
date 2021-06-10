@@ -1,22 +1,26 @@
 import { studentProps } from './studentTypes'
 
+
 export class StudentRepo {
     private entities: any
 
     constructor(entities: any) {
-        //Category //User //Skill //Level
+
         this.entities = entities
     }
 
-    public async create(studentProps: studentProps) {
-        const StudentEntity = this.entities.Student
+    public async createStudent(studentProps: studentProps) {
 
-        return await StudentEntity.create({ firstname: studentProps.firstname, lastname: studentProps.lastname }).save()
+        console.log("REPO:", studentProps);
+        
+        const studentEntity = this.entities.Student
+
+        return await studentEntity.create({ firstName: studentProps.firstName, lastName: studentProps.lastName, user: studentProps.user }).save()
     }
 
     public async getStudentById(studentId: number) {
-        const StudentEntity = this.entities.Student
+        const studentEntity = this.entities.Student
 
-        return await StudentEntity.findOne(studentId)
+        return await studentEntity.findOne(studentId)
     }
 }

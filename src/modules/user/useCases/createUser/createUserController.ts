@@ -16,11 +16,14 @@ export class CreateUserController {
 
         const requestUserDto = new RequestCreateUserDto(req.body);
         const dtoErrors = await requestUserDto.isValid(requestUserDto)
+        console.log(req.body);
+        
 
         if (!!dtoErrors) {
             return res.status(400).json(dtoErrors);
         }
 
         this.useCase.execute(req.body);
+        res.status(200).send('check')
     }
 }

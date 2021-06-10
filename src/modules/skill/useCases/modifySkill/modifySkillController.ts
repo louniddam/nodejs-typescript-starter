@@ -9,9 +9,11 @@ export class ModifySkillController {
     }
 
     public async modifySkill(req: Request, res: Response){
-        const id = req.params.id
-        const { categoryId, name, description } = req.body
-        const skill = await this.useCase.modifySkill( id, { name, description, categoryId } )
+        const id = parseInt(req.params.id) 
+        const { category, name, description } = req.body
+
+        
+        const skill = await this.useCase.modifySkill( id, { name, description, category } )
 
         res.status(200).send(skill)
     }

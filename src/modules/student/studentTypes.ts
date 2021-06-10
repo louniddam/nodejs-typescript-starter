@@ -1,4 +1,5 @@
 export type studentProps = {
-    firstname: string
-    lastname: string
+    firstName: string
+    lastName: string
+    user: number
 }

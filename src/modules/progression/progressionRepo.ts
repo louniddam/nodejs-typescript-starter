@@ -4,12 +4,11 @@ export class ProgressRepo {
     private entities: any
 
     constructor(entities: any) {
-        //Category //User //Skill //Level
         this.entities = entities
     }
 
-    public async createProgress(progressProps: any) {
-        const ProgressEntity = this.entities.Progress
+    public async createProgress(progressProps: progressProps) {
+        const ProgressEntity = this.entities.Progression
 
         return await ProgressEntity.create({ skill: progressProps.skill, student: progressProps.student, level: progressProps.level }).save()
     }

@@ -8,7 +8,7 @@ export class UpdateCategory {
         this.categoryRepo = categoryRepo
     }
 
-    public async updateCategory (id: string, props: categoryProps) {
+    public async updateCategory (id: number, props: categoryProps) {
         return await this.categoryRepo.modifyCategory(id, props)
     }
 }

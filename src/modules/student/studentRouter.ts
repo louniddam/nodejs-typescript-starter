@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import { createStudentController } from './useCases/createStudent/'
+import { getByIdStudentController } from './useCases/getByIdStudent'
 
 const studentRouter: Router = Router();
 
-///api/v1/students/
-studentRouter.post('/', (req, res) => createStudentController.execute(req, res))
+studentRouter.post('/', (req, res) => createStudentController.createStudent(req, res))
+studentRouter.get('/:id', (req, res) => getByIdStudentController.getStudentById(req, res))
 
 export { studentRouter }

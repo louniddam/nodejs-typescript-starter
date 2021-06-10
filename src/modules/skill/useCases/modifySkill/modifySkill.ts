@@ -1,5 +1,5 @@
 import { SkillRepo } from '../../skillRepo'
-import { SkillProps } from '../../skillTypes'
+import { skillProps } from '../../skillTypes'
 
 export class ModifySkill{
    private skillRepo: SkillRepo
@@ -8,7 +8,7 @@ export class ModifySkill{
         this.skillRepo = skillRepo
     }
 
-    public async modifySkill(id: String, props: SkillProps){
+    public async modifySkill(id: number, props: skillProps){
         return await this.skillRepo.modifySkill(id, props)
     }
 }

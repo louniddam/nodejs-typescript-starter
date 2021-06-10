@@ -1,5 +1,5 @@
-export interface SkillProps {
+export interface skillProps {
     name: string
     description: string
-    categoryId: number
+    category: number | null
 }
